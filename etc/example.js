@@ -36,9 +36,7 @@ function startFn (callback) {
           app.use(function (req, res) { res.end('handled by pid = ', process.pid); });
 
           // all socket.io stuff goes here
-          var io = require('socket.io');
-          // don't forget to do this in the end
-          io.listen(server);
+          var io = require('socket.io')(server);
 
           // don't do server.listen(...)!
           // just pass the server instance to the final async's callback
