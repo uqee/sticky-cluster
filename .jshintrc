@@ -1,0 +1,25 @@
+{
+  "node": true,
+  "globals": {
+    "require": false,
+    "console": false,
+    "process": false,
+    "__dirname": false
+  },
+  "bitwise": false,
+  "eqeqeq": true,
+  "es3": true,
+  "forin": true,
+  "immed": true,
+  "indent": 2,
+  "latedef": true,
+  "maxcomplexity": 14,
+  "newcap": true,
+  "noarg": true,
+  "nonew": true,
+  "quotmark": "single",
+  "strict": true,
+  "trailing": true,
+  "undef": true,
+  "unused": "vars"
+}
