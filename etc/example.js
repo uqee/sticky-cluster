@@ -24,13 +24,13 @@ function startFn (callback) {
       // configure the worker
 
         function (services, callback) {
-          var http = require('http'),
-              app = require('express')(),
-              server = http.createServer(app),
+          var http = require('http');
+          var app = require('express')();
+          var server = http.createServer(app);
 
-              // get remote services
-              fakedb1 = services[0],
-              fakedb2 = services[1];
+          // get remote services
+          var fakedb1 = services[0];
+          var fakedb2 = services[1];
 
           // all express-related stuff goes here, e.g.
           app.use(function (req, res) { res.end('handled by pid = ', process.pid); });
@@ -44,7 +44,6 @@ function startFn (callback) {
         }
 
     ],
-    
     function (err, server) {
 
       // handle error
@@ -57,7 +56,7 @@ function startFn (callback) {
 }
 
 sticky(startFn, {
-  concurrency: process.env.WEB_CONCURRENCY,
-  port: process.env.PORT,
+  concurrency: parseInt(process.env.WEB_CONCURRENCY, 10),
+  port: parseInt(process.env.PORT, 10),
   debug: (process.env.NODE_ENV === 'development')
 });
