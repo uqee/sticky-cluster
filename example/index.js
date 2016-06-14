@@ -29,14 +29,14 @@ function startFn (callback) {
           var server = http.createServer(app);
 
           // get remote services
-          var fakedb1 = services[0];
-          var fakedb2 = services[1];
+          //var fakedb1 = services[0];
+          //var fakedb2 = services[1];
 
           // all express-related stuff goes here, e.g.
           app.use(function (req, res) { res.end('handled by pid = ', process.pid); });
 
           // all socket.io stuff goes here
-          var io = require('socket.io')(server);
+          //var io = require('socket.io')(server);
 
           // don't do server.listen(...)!
           // just pass the server instance to the final async's callback
@@ -46,7 +46,7 @@ function startFn (callback) {
     ],
     function (err, server) {
 
-      // handle error
+      // fail on error
       if (err) { console.log(err); process.exit(1); }
 
       // pass server instance to sticky-cluster

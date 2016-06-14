@@ -1,2 +1,3 @@
-/etc/.env
+/example/.env
+/example/node_modules
 /node_modules

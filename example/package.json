@@ -1,0 +1,13 @@
+{
+  "name": "sticky-cluster-example",
+  "scripts": {
+    "start": "export NODE_ENV=development; node index.js",
+    "start:foreman": "foreman run --env .env node index.js"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "express": "^4.13.4",
+    "socket.io": "^1.4.6",
+    "sticky-cluster": "^0.1.2"
+  }
+}

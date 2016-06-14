@@ -58,7 +58,7 @@ require('sticky-cluster')(
 );
 ```
 
-For more detailed example have a look at `./etc/example.js`.
+For more detailed example have a look at `./example`.
 
 
 ### Accepted options
