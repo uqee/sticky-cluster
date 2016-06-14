@@ -1,6 +1,6 @@
 {
   "name": "sticky-cluster",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "repository": "https://github.com/uqee/sticky-cluster.git",
   "description": "Sticky session balancer, 10x faster and with much better scattering than `sticky-session` module",
   "keywords": [
