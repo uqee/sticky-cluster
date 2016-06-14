@@ -18,5 +18,8 @@
   "dependencies": {
     "string-hash": "^1.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "chalk": "^1.1.3",
+    "moment": "^2.13.0"
+  }
 }
