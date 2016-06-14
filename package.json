@@ -9,7 +9,6 @@
   "main": "./lib/index",
   "engines": { "node": "0.12.x" },
   "dependencies": {
-    "chance": "^0.7.5",
     "string-hash": "^1.1.0"
   },
   "devDependencies": {}

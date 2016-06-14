@@ -1,0 +1,12 @@
+{
+  "name": "sticky-cluster-benchmark",
+  "version": "0.0.2",
+  "scripts": {
+    "start": "node index.js",
+    "start:lite": "npm run-script start -- 10 10000"
+  },
+  "dependencies": {
+    "chance": "^1.0.3"
+  },
+  "devDependencies": {}
+}

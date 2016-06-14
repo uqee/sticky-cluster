@@ -58,8 +58,6 @@ require('sticky-cluster')(
 );
 ```
 
-For more detailed example have a look at `./example`.
-
 
 ### Accepted options
 
@@ -73,28 +71,27 @@ Here's the full list of accepted options:
 | `prefix`      | prefix in names of [IPC](https://en.wikipedia.org/wiki/Inter-process_communication) messages | `sticky-cluster:`                 |
 
 
+### Example
+
+Navigate to `./example` and sequentially run `npm install` and `npm start`. Have a look at the source.
+
+
 ### Benchmarking
 
 There's a script you can run to test various hashing functions. It generates a bunch of random IP addresses (both `v4` and `v6`) and then hashes them using different algorithms aiming to get a consistent {IP address -> array index} mapping. 
 
 For every hash function the script outputs execution time in milliseconds (less is better) and distribution of IP addresses over the clients' ids (more even distribution is better).
 
-To run with your own parameters:
+Navigate to `./benchmark` and run `npm install` in advance. To run the benchmarking tool with default parameters type `npm start` or `npm run-script start:lite`, or if you wish to try different values, do:
 
 ```
-$ node ./etc/benchmark <num_workers> <num_ip_addresses>
-```
-
-or just use defaults (`num_workers = 10`, `num_ip_addresses = 100000`):
-
-```
-$ node ./etc/benchmark
+$ npm start -- <num_workers> <num_ip_addresses>
 ```
 
 An output from my laptop:
 
 ```
-$ node ./etc/benchmark.js 10 10000
+$ npm run-script start:lite
 generating random ips...
 benchmarking...
 int31
@@ -106,7 +103,7 @@ djb2
 ```
 
 ```
-$ node ./etc/benchmark
+$ npm start
 generating random ips...
 benchmarking...
 int31
