@@ -33,7 +33,7 @@ function startFn (callback) {
           //var fakedb2 = services[1];
 
           // all express-related stuff goes here, e.g.
-          app.use(function (req, res) { res.end('handled by pid = ', process.pid); });
+          app.use(function (req, res) { res.end('Handled by PID = ' + process.pid); });
 
           // all socket.io stuff goes here
           //var io = require('socket.io')(server);
