@@ -73,7 +73,7 @@ Here's the full list of accepted options:
 
 ### Example
 
-Navigate to `./example` and sequentially run `npm install` and `npm start`. Have a look at the source.
+Open terminal at the `./example` directory and sequentially run `npm install` and `npm start`. Navigate to `http://localhost:8080`. Have a look at the source.
 
 
 ### Benchmarking
