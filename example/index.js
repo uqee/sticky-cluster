@@ -1,5 +1,5 @@
 'use strict';
-var sticky = require('sticky-cluster');
+var sticky = require('../lib');
 
 function startFn (callback) {
   var async = require('async');
