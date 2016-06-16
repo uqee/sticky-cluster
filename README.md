@@ -115,3 +115,21 @@ djb2
 ```
 
 The algorithm used in the `sticky-session` module is `int31` and the local one is `djb2`. As might be seen, the `djb2` algorithm provides significant time advantage and clearly more even scattering over the worker processes.
+
+
+### Changelog
+
+#### 0.1.2 -> 0.2.0
+
++ Removed a `SIGTERM` listener on the master process.
++ Replaced `.on('SIGINT', ...)` with `.once('SIGINT', ...)`.
++ Improved debug logs.
++ Moved unnecessary dependencies from the main package to the `./example` and `./benchmark` apps.
+
+#### 0.1.1 -> 0.1.2
+
++ Updated the example.
+
+#### 0.1.0 -> 0.1.1
+
++ Published to NPM.
