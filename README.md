@@ -125,6 +125,7 @@ The algorithm used in the `sticky-session` module is `int31` and the local one i
 + Replaced `.on('SIGINT', ...)` with `.once('SIGINT', ...)`.
 + Improved debug logs.
 + Moved unnecessary dependencies from the main package to the `./example` and `./benchmark` apps.
++ Fixed a few minor issues in the mentioned apps.
 
 #### 0.1.1 -> 0.1.2
 
