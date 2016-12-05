@@ -91,27 +91,15 @@ $ npm start -- <num_workers> <num_ip_addresses>
 An output from my laptop:
 
 ```
-$ npm run-script start:lite
-generating random ips...
-benchmarking...
-int31
-  time (ms):  17
-  scatter:  [ 2629, 911, 1081, 736, 657, 988, 858, 782, 677, 681 ]
-djb2
-  time (ms):  3
-  scatter:  [ 997, 981, 996, 1000, 1003, 1019, 983, 1002, 1014, 1005 ]
-```
-
-```
 $ npm start
 generating random ips...
 benchmarking...
 int31
-  time (ms):  140
-  scatter:  [ 27367, 6818, 8184, 9313, 8065, 9153, 7893, 8196, 6792, 8219 ]
+  time (ms):  188
+  scatter:  [ 25788, 8378, 7768, 9438, 7280, 6649, 9648, 8061, 10287, 6703 ]
 djb2
-  time (ms):  21
-  scatter:  [ 10005, 10006, 9920, 9926, 10132, 10071, 10046, 9924, 10022, 9948 ]
+  time (ms):  20
+  scatter:  [ 9957, 9809, 9853, 10075, 10077, 9957, 9982, 10068, 10179, 10043 ]
 ```
 
 The algorithm used in the `sticky-session` module is `int31` and the local one is `djb2`. As might be seen, the `djb2` algorithm provides significant time advantage and clearly more even scattering over the worker processes.
