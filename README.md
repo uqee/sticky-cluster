@@ -70,7 +70,7 @@ Here's the full list of accepted options:
 | `port`        | http port number to listen      | `8080`                            |
 | `debug`       | log actions to console          | `false`                           |
 | `prefix` | prefix in names of [IPC](https://en.wikipedia.org/wiki/Inter-process_communication) messages | `sticky-cluster:` |
-| `env` | function (workerIndex => workerEnv) to provide additional worker configuration through the environment variables | sets `stickycluster_worker_index` env variable |
+| `env` | function (workerIndex => workerEnv) to provide additional worker configuration through the environment variables | sets `stickycluster_worker_index` (be aware that worker's index stays the same through its death and resurrection, but worker's id, which is used in debug messages, changes) |
 
 
 ### Example
