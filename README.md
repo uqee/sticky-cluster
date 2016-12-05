@@ -53,7 +53,8 @@ require('sticky-cluster')(
   {
     concurrency: 10,
     port: 3000,
-    debug: true
+    debug: true,
+    env: function (index) { return { stickycluster_worker_index: index }; }
   }
 );
 ```
