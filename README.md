@@ -67,8 +67,9 @@ Here's the full list of accepted options:
 | :------------ | :-----------------------------  | :-------------------------------- |
 | `concurrency` | number of workers to be forked  | number of CPUs on the host system |
 | `port`        | http port number to listen      | `8080`                            |
-| `debug`       | log actions to console          | `false`                             |
-| `prefix`      | prefix in names of [IPC](https://en.wikipedia.org/wiki/Inter-process_communication) messages | `sticky-cluster:`                 |
+| `debug`       | log actions to console          | `false`                           |
+| `prefix` | prefix in names of [IPC](https://en.wikipedia.org/wiki/Inter-process_communication) messages | `sticky-cluster:` |
+| `env` | function (workerIndex => workerEnv) to provide additional worker configuration through the environment variables | sets `stickycluster_worker_index` env variable |
 
 
 ### Example
