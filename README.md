@@ -119,6 +119,10 @@ The algorithm used in the `sticky-session` module is `int31` and the local one i
 
 ### Changelog
 
+#### 0.2.0 -> 0.2.1
+
++ Handle empty IP addresses.
+
 #### 0.1.2 -> 0.2.0
 
 + Removed a `SIGTERM` listener on the master process.
