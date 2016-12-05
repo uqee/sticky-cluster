@@ -84,9 +84,9 @@ There's a script you can run to test various hashing functions. It generates a b
 
 For every hash function the script outputs execution time in milliseconds (less is better) and distribution of IP addresses over the clients' ids (more even distribution is better).
 
-Navigate to `./benchmark` and run `npm install` in advance. To run the benchmarking tool with default parameters type `npm start` or `npm run-script start:lite`, or if you wish to try different values, do:
-
 ```
+$ cd ./benchmark
+$ npm install
 $ npm start -- <num_workers> <num_ip_addresses>
 ```
 
