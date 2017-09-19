@@ -71,6 +71,7 @@ Here's the full list of accepted options:
 | `debug`       | log actions to console          | `false`                           |
 | `prefix` | prefix in names of [IPC](https://en.wikipedia.org/wiki/Inter-process_communication) messages | `sticky-cluster:` |
 | `env` | function (workerIndex => workerEnv) to provide additional worker configuration through the environment variables | sets `stickycluster_worker_index` (be aware that worker's index stays the same through its death and resurrection, but worker's id, which is used in debug messages, changes) |
+| `hardShutdownDelay` | delay(ms) to trigger the `hard shutdown` if the `graceful shutdown` doesn't complete | `60 * 1000 ms` |
 
 
 ### Example
@@ -108,6 +109,11 @@ The algorithm used in the `sticky-session` module is `int31` and the local one i
 
 
 ### Changelog
+
+#### 0.3.1 -> 0.3.2
+
++ Close alive connections before exiting to achieve `graceful shutdown`.
++ Add `hardShutdownDelay` option to trigger `hard shutdown` if the `graceful shutdown` doesn't complete in the amount of delay. 
 
 #### 0.2.1 -> 0.3.0
 
