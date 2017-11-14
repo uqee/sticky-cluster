@@ -72,7 +72,7 @@ Here's the full list of accepted options:
 | `prefix` | prefix in names of [IPC](https://en.wikipedia.org/wiki/Inter-process_communication) messages | `sticky-cluster:` |
 | `env` | function (workerIndex => workerEnv) to provide additional worker configuration through the environment variables | sets `stickycluster_worker_index` (be aware that worker's index stays the same through its death and resurrection, but worker's id, which is used in debug messages, changes) |
 | `hardShutdownDelay` | delay(ms) to trigger the `hard shutdown` if the `graceful shutdown` doesn't complete | `60 * 1000 ms` |
-
+| `errorHandler` | callback function for the `net.Server.error` event on the `serverInstance` created in `master.js`. | `function (err) { console.log(err); process.exit(1); }` |
 
 ### Example
 
@@ -109,6 +109,10 @@ The algorithm used in the `sticky-session` module is `int31` and the local one i
 
 
 ### Changelog
+
+#### 0.3.2 -> 0.3.3
+
++ Allow the caller to specify a callback function for the `net.Server.error` event on the `serverInstance` created in `master.js`.
 
 #### 0.3.1 -> 0.3.2
 
