@@ -41,14 +41,14 @@ require('sticky-cluster')(
     var http = require('http');
     var app = require('express')();
     var server = http.createServer(app);
-      
+
     // configure an app
       // do some async stuff if needed
-      
+
     // don't do server.listen(), just pass the server instance into the callback
     callback(server);
   },
-  
+
   // options
   {
     concurrency: 10,
@@ -73,6 +73,7 @@ Here's the full list of accepted options:
 | `env` | function (workerIndex => workerEnv) to provide additional worker configuration through the environment variables | sets `stickycluster_worker_index` (be aware that worker's index stays the same through its death and resurrection, but worker's id, which is used in debug messages, changes) |
 | `hardShutdownDelay` | delay(ms) to trigger the `hard shutdown` if the `graceful shutdown` doesn't complete | `60 * 1000 ms` |
 | `errorHandler` | callback function for the `net.Server.error` event on the `serverInstance` created in `master.js`. | `function (err) { console.log(err); process.exit(1); }` |
+| `workerStartup` | callback function for each worker being spun up | `function(worker) {}` |
 
 ### Example
 
@@ -81,7 +82,7 @@ Open terminal at the `./example` directory and sequentially run `npm install` an
 
 ### Benchmarking
 
-There's a script you can run to test various hashing functions. It generates a bunch of random IP addresses (both `v4` and `v6`) and then hashes them using different algorithms aiming to get a consistent {IP address -> array index} mapping. 
+There's a script you can run to test various hashing functions. It generates a bunch of random IP addresses (both `v4` and `v6`) and then hashes them using different algorithms aiming to get a consistent {IP address -> array index} mapping.
 
 For every hash function the script outputs execution time in milliseconds (less is better) and distribution of IP addresses over the clients' ids (more even distribution is better).
 
@@ -117,7 +118,7 @@ The algorithm used in the `sticky-session` module is `int31` and the local one i
 #### 0.3.1 -> 0.3.2
 
 + Close alive connections before exiting to achieve `graceful shutdown`.
-+ Add `hardShutdownDelay` option to trigger `hard shutdown` if the `graceful shutdown` doesn't complete in the amount of delay. 
++ Add `hardShutdownDelay` option to trigger `hard shutdown` if the `graceful shutdown` doesn't complete in the amount of delay.
 
 #### 0.2.1 -> 0.3.0
 
